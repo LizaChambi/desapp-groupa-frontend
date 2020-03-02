@@ -5,14 +5,13 @@ node_js:
 before_install:
     - npm install -g create-react-app
 install:
-    # - npm install
+    - npm install
 script: 
+    # - npm test
     - npm run build
 deploy:
     provider: heroku
     api_key: $HEROKU_API_KEY
     app: $HEROKU_APP_NAME
-    local_dir: build
-    skip_cleanup: true
     on:
         repo: $HEROKU_REPOSITORY_NAME
